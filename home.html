@@ -1,1 +1,117 @@
 
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Centro de Inteligência Digital — Guia Rápido (Dark Hacker)</title>
+<style>
+:root{--panel:#0f1113;--accent:#00ff9d;--muted:#9aa5a6;--mono: "Courier New", monospace;}
+body{background:linear-gradient(180deg,#030303,#0b0b0b);color:#d7f7ee;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; padding:24px;}
+.container{max-width:980px;margin:0 auto;}
+.header{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+.logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#001f12,#003924);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-family:var(--mono);}
+.h1{font-size:20px;margin:0}
+.meta{color:var(--muted);font-size:13px}
+.card{background:var(--panel);border-radius:12px;padding:16px;margin:14px 0;box-shadow:0 6px 20px rgba(0,0,0,0.6);}
+h2{color:var(--accent);margin:8px 0 12px;font-size:16px}
+h3{margin:10px 0;color:#bfefd6}
+.p{color:#bcdccb;line-height:1.45}
+.kv{font-family:var(--mono);color:#9af6c6;font-size:13px}
+.badge{display:inline-block;background:#07110b;color:var(--accent);padding:4px 8px;border-radius:6px;font-size:12px;margin-right:8px}
+ul{margin:8px 0 12px 20px}
+code{background:#07110b;padding:2px 6px;border-radius:6px;color:var(--accent);font-family:var(--mono);}
+.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="logo">CID</div>
+    <div>
+      <div class="h1">Centro de Inteligência Digital — Guia Rápido (Dark Hacker)</div>
+      <div class="meta">Guia para time • copie, adapte e compartilhe</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Resumo executivo</h2>
+    <p class="p">Guia resumido com faixas de valores, modus operandi, sinais de alerta e passos investigativos. Use como material de treinamento e referência para triagem de incidentes.</p>
+  </div>
+
+  <div class="card">
+    <h2>Faixas de valores — potencial diário (resumo)</h2>
+    <h3>Faixa 1 — R$10–100 (microgolpes)</h3>
+    <p class="p">Ex.: frete falso, cupom, pesquisas. Potencial diário: baixo R$50–500 | médio R$500–5.000 | alto (bots) R$10k–100k.</p>
+    <h3>Faixa 2 — R$101–1.000</h3>
+    <p class="p">Ex.: vendas pequenas falsas, boletos. Potencial diário: médio R$1k–30k | alto R$10k–200k.</p>
+    <h3>Faixa 3 — R$1.001–10.000</h3>
+    <p class="p">Ex.: eletrônicos caros, clonagem WhatsApp. Potencial diário: médio R$3k–100k | alto R$20k–500k.</p>
+    <h3>Faixa 4 — R$10.000–100.000</h3>
+    <p class="p">Ex.: lojas falsas em escala, ransomware. Potencial diário: R$10k–2M.</p>
+    <h3>Faixa 5 — R$100.001–1.000.000</h3>
+    <p class="p">Ex.: pirâmides, extorsões corporativas. Potencial diário: R$100k–5M.</p>
+  </div>
+
+  <div class="card">
+    <h2>Modus operandi — padrões comuns</h2>
+    <ul>
+      <li>Automação + templates (mensagens, anúncios).</li>
+      <li>Botnets / envios em massa.</li>
+      <li>Contas laranja e rede de mules (cash-out).</li>
+      <li>Domínios rotativos e anúncios pagos.</li>
+      <li>Divisão de funções (criador, captador, cash-out).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Investigação — passos rápidos</h2>
+    <ol>
+      <li>Preservar evidências (prints, TXID, cabeçalhos, logs).</li>
+      <li>Coletar TXIDs e identificar contas recebedoras.</li>
+      <li>Solicitar bloqueio ao banco com TXID e comprovantes.</li>
+      <li>Denunciar à plataforma e pedir preservação de logs.</li>
+      <li>Registrar BO e encaminhar dossiê a autoridade especializada / CERT.br.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Sinais (red flags)</h2>
+    <ul>
+      <li>Pagamento via conta PF fora do checkout (PIX direto).</li>
+      <li>Perfil novo, fotos genéricas ou imagens recortadas.</li>
+      <li>Oferta muito abaixo do mercado; urgência excessiva.</li>
+      <li>Links de rastreio estranho; URLs encurtadas.</li>
+      <li>Mesma imagem/texto em vários anúncios.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Templates rápidos</h2>
+    <p class="p"><code>Mensagem ao vendedor (antes de pagar): Olá, pode enviar foto com etiqueta/nota visível? Só pago via checkout do Marketplace ou meio com proteção.</code></p>
+    <p class="p"><code>Mensagem ao banco: Fiz PIX (TXID: [txid]) para conta [dados]. Suspeita de fraude. Solicito bloqueio e investigação.</code></p>
+  </div>
+
+  <div class="card">
+    <h2>Ações recomendadas para o time</h2>
+    <ul>
+      <li>Padronizar registro obrigatório de TXID em todos os casos.</li>
+      <li>Monitorar soma diária de recebimentos por conta (alerta > R$5k).</li>
+      <li>Conectar RSS de CERT.br / SaferNet → Notion para ingestão automática.</li>
+      <li>Priorizar casos com múltiplos TXIDs para mesma conta recebedora.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Próximos materiais</h2>
+    <ul>
+      <li>Ficha de Golpe — template Notion (para registro detalhado).</li>
+      <li>CSV de exemplos por faixa de valor (para treinar detecção).</li>
+      <li>Guia de automações (Make / Zapier → Notion).</li>
+    </ul>
+  </div>
+
+  <div class="footer">Centro de Inteligência Digital • Compartilhe apenas internamente</div>
+</div>
+</body>
+</html>
